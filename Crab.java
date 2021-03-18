@@ -6,9 +6,9 @@ public class Crab extends Actor
 {
     public void act()
     {
-      cisatedge ( );
-      lookforworm( );
-      randomturn ( );
+       turnleft ( );
+       turnright ( );
+       lookforworm( );
        move (1);
     }
     
@@ -23,33 +23,25 @@ public class Crab extends Actor
    { 
        if ( isTouching (Worm.class) ) 
       {                  
-          removeTouching (Worm.class);        
+          removeTouching (Worm.class);
+          Greenfoot.playSound ("slurp.wav");
      }   
     }
-    
-    
-    /*
-     * Make the crab turn randomly left or right between 0-45*
-     */
-    public void randomturn ( )
-    {
-       if(Greenfoot.getRandomNumber(100)< 10)
-    
-      {
-        turn(Greenfoot.getRandomNumber(91)- 45);
-    
-      }
+   public void turnright()
+   { 
+       if (Greenfoot.isKeyDown ("right"))
+       {
+           turn (4);
+        }
+   }
+   public void turnleft()
+   { 
+       if (Greenfoot.isKeyDown ("left"))
+       {
+           turn (-4);
+        }
     }
-    /*
-     * If the crab is at edge turn
-     */
-    public void cisatedge ( )
-    {
-         if(isAtEdge())
-      {
-        turn(7); 
-      }
-    }
-}
+    
+  }
 
 
