@@ -9,6 +9,8 @@ public class CrabWorld extends World
     public CrabWorld() 
     {
         super(560, 560, 1);
+        
+        showText("score: 0", 50, 500);
         addObject (new Crab(),150,100);
         addObject (new Lobster(),400,100);
         addObject (new Lobster(),400,300);
@@ -25,16 +27,4 @@ public class CrabWorld extends World
         addObject (new Worm(), 300, 500);
     }
 }
-//
-public class Crab extends Animal
-{
-    private GreenfootImage image1;
-    private GreenfootImage image2;
-}
- 
-public Crab()
-{
-    image1 = new GreenfootImage ("Crab.png");
-    image2 = new GreenfootImage ("Crab2.png");
-    setImage(image1);
-}
+
